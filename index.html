@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -433,7 +432,7 @@
       if (data.access_token) {
         localStorage.setItem('lexms_token', data.access_token);
         localStorage.setItem('lexms_user', JSON.stringify(data.user));
-        window.location.href = '/';
+        window.location.href = 'https://martinsesilva.com';
       } else {
         errEl.style.display='block'; errEl.textContent=isEn?'Invalid email or password.':'E-mail ou senha incorretos.';
         btn.disabled=false; btn.innerHTML='<span class="pt">Entrar no LexMS</span><span class="en">Sign in to LexMS</span>';
