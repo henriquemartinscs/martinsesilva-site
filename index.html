@@ -430,9 +430,9 @@
       });
       const data = await r.json();
       if (data.access_token) {
-        localStorage.setItem('lexms_token', data.access_token);
-        localStorage.setItem('lexms_user', JSON.stringify(data.user));
-        window.location.href = 'https://martinsesilva.com';
+        const token = encodeURIComponent(data.access_token);
+        const user  = encodeURIComponent(JSON.stringify(data.user));
+        window.location.href = 'https://martinsesilva.com/?t=' + token + '&u=' + user;
       } else {
         errEl.style.display='block'; errEl.textContent=isEn?'Invalid email or password.':'E-mail ou senha incorretos.';
         btn.disabled=false; btn.innerHTML='<span class="pt">Entrar no LexMS</span><span class="en">Sign in to LexMS</span>';
